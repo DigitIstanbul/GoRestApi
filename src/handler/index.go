@@ -1,9 +1,16 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"BudgetApi/src/library"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+type User struct {
+	Name string `json:"name"`
+}
 
 func Index(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"message": c.Query("Lan"),
-	})
+	user := &User{Name: "Muhammed Ali"}
+	c.JSON(http.StatusOK, library.SuccessResponse(http.StatusOK, "Success", user))
 }
