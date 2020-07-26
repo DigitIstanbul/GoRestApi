@@ -11,6 +11,10 @@ type User struct {
 }
 
 func Index(c *gin.Context) {
+
 	user := &User{Name: "Muhammed Ali"}
-	c.JSON(http.StatusOK, library.SuccessResponse(http.StatusOK, "Success", user))
+
+	response := library.SuccessResponse(http.StatusOK, "Success", user)
+	c.JSON(response.StatusCode, response.Response)
+
 }

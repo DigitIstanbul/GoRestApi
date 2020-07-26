@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func Settings() {
+func LoadEnv() {
 
 	path, _ := os.Getwd()
 
@@ -21,4 +21,8 @@ func Settings() {
 			log.Fatal("Error loading development.env file, " + path)
 		}
 	}
+}
+
+func GetConfig(key string) string {
+	return os.Getenv(key)
 }
