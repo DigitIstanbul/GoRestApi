@@ -15,6 +15,8 @@ type Routes struct {
 func (c Routes) StartGin() {
 	r := gin.Default()
 
+	r.GET("/", handler.Index)
+
 	v1 := r.Group("/v1.0")
 	v1.Use(middleware.Auth)
 	{
@@ -28,6 +30,8 @@ func (c Routes) StartGin() {
 		response := library.ErrorResponse(http.StatusNotFound, "Service not found!", nil)
 		c.JSON(response.StatusCode, response.Response)
 	})
+
+	r.StaticFile("/favicon.ico", "./static/favicon.ico")
 
 	_ = r.Run(":" + config.GetConfig("PORT"))
 }

@@ -28,7 +28,7 @@ func ErrorResponse(statusCode int, message string, data interface{}) ResponseStr
 	}
 
 	requestId := uuid.New()
-	response := gin.H{"meta": gin.H{"requestId": requestId, "statusCode": http.StatusOK, "message": message}, "result": data}
+	response := gin.H{"meta": gin.H{"requestId": requestId, "statusCode": statusCode, "message": message}, "result": data}
 	return ResponseStruct{Message: message, StatusCode: statusCode, Response: response, RequestId: requestId}
 
 }

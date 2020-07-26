@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	config.LoadEnv()
 	var s route.Routes
 	s.StartGin()
