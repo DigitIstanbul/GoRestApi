@@ -8,6 +8,7 @@ require (
 	github.com/codegangsta/gin v0.0.0-20171026143024-cafe2ce98974 // indirect
 	github.com/gin-gonic/gin v1.6.3
 	github.com/google/uuid v1.1.1
+	github.com/jinzhu/gorm v1.9.15 // indirect
 	github.com/joho/godotenv v1.3.0
 	github.com/mattn/go-shellwords v1.0.10 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
